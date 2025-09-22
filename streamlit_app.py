@@ -5,8 +5,8 @@ from snowflake.snowpark.functions import col
 # Write directly to the app
 st.title("Customize Your Smoothie: :coffee:")
 st.write(
-  """Choose the fruits you want in your custom smoothie!
-  """
+    """Choose the fruits you want in your custom smoothie!
+    """
 );
 
 import streamlit as st
@@ -35,7 +35,7 @@ if ingredients_list:
     #st.write(ingredients_string)
 
     my_insert_stmt = """ insert into smoothies.public.orders(ingredients, name_on_order) 
-            values ('""" + ingredients_string + """','"""+name_on_order+ """')"""
+        values ('""" + ingredients_string + """','"""+name_on_order+ """')"""
 
     #st.write(my_insert_stmt)
     time_to_insert = st.button('Submit Order')
