@@ -9,7 +9,7 @@ st.write(
     """
 );
 
-import streamlit as st
+import requests
 
 name_on_order = st.text_input('Name of Smoothie:')
 #st.write('The name on your smoothie will be:', name_on_order)
@@ -58,6 +58,6 @@ if ingredients_list:
         session.sql(my_insert_stmt).collect()
         st.success('Your Smoothie is ordered!', icon='👍')
 
-import requests
+
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
 sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
